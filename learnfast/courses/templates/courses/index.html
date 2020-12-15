@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block 'style' %}
+  <style>
+    .header{
+      background-color: white;
+            padding: 30px;
+            border-radius: 20px;
+            margin: 10px;
+    }
+    .albumMain{
+      padding: 30px;
+      border-radius: 20px;
+      margin: 10px;
+    }
+  </style>
+{% endblock 'style' %}
+  
+{% block 'content' %}
+  
+  <main role="main" class="justify-content-center w-100 "> 
+  
+    <section  class="text-center mt-5 mb-5 header">
+      <div class="container-fluid">
+        <h1>Listas de Cursos</h1>
+        <p class="lead text-muted">Os cursos são desenvolvidos pensando em você, aluno; Que, acredita em um futuro pela frente, e também na sua carreira profissional.</p>
+      </div>
+    </section>
+  
+    <div class="album py-5 bg-light albumMain">
+      
+      <div class="container-fluid">
+        
+        <div class="row mb-2">
+        {% for course in courses  %}
+          <div class="col-md-6">
+            <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+              <div class="col p-4 d-flex flex-column position-static">
+                <strong class="d-inline-block mb-2 text-primary">{{ course.slug }}</strong>
+                <h3 class="mb-0">{{ course.name }}</h3>
+                <div class="mb-1 text-muted">{{ course.start_date }}</div>
+                <p class="card-text mb-auto">{{ course.description | slice:":100" }}</p>
+                <a href="{{ course.get_absolute_url }}" class="stretched-link">Continue Lendo</a>
+              </div>
+              {% if course.imagem_course %}  
+              <div class="col-auto d-none d-lg-block">
+                <img class="bd-placeholder-img" width="250" height="250" src="{{ course.imagem_course.url }}"/> 
+              </div>
+              {% else %}
+              <div class="col-auto d-none d-lg-block">
+                <img class="bd-placeholder-img" width="250" height="250" src="{% static 'img/learn_fast.png' %}"/> 
+              </div>
+              {% endif %}
+                
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+        </div>
+        
+        
+    </div>
+  
+  </main>
+  
+
+
+{% endblock %}

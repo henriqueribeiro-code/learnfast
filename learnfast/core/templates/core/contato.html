@@ -1,0 +1,39 @@
+
+{% extends 'base.html' %}
+
+
+{% block 'title' %}Contato{% endblock %}
+
+
+
+{% block 'style' %}
+<style>
+   .contact{
+      background-color: white;
+      padding: 20px;
+   }
+
+   .forms{
+      margin-top: 40px;
+      padding: 30px;
+      background-color: white;
+   }
+</style>
+{% endblock 'style' %}
+   
+
+
+{% block 'content' %} 
+<div class="contact">
+   <h2>Contato</h2> 
+   <p class="lead">Email: learnfast@mail.com</p>
+   <p class="lead">Telefone: (XX)X.XXXX.XXXX</p>
+   <p class="lead">Endereço: Rua Tal no canto tal, Bairro Tal - Número Tal (Cidade-BR)</p>
+</div>
+<div class="forms">
+   <h3>Tire sua dúvida</h3>
+   {{ forms }}
+ 
+
+</div>
+{% endblock %}
