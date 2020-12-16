@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'learnfast.core', 
     'learnfast.courses',
+    'learnfast.accounts',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

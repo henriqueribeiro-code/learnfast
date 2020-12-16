@@ -18,6 +18,7 @@ admin.sites.AdminSite.index_title = 'LearnFast'
 urlpatterns = [
     path('', include('learnfast.core.urls'), name='core'),
     path('courses/', include('learnfast.courses.urls'), name='courses'),
+    path('conta/', include('learnfast.accounts.urls'), name='accounts'),
     path('admin/', admin.site.urls),
 ] 
 
