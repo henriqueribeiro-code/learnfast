@@ -1,85 +1,20 @@
 {% extends 'base.html' %}
 {% load static %}
-{% load crispy_forms_tags %}
+{% load crispy_forms_tags %} 
+{%  crispy ContactCourseForms ContactCourseForms.helper %}
 
 {% block 'style' %}
-<style>
-    body{
-        background-image: url("{% static 'img/back.png' %}");
-    }
-    .my-row {
-
-        margin: 10px;
-        
-    }
-
-    .my-col {
-
-        margin: 5px;
-    }
-    .my-descript{
-        background-color: white;
-        padding: 30px;
-        border-radius: 20px;
-    }
-
-    img {
-        width: 500px;
-        height: 300px;
-    }
-
-    .info{
-        padding: 10px;
-        margin: 10px;
-        background-color:white;
-        border-radius: 20px;
-        
-    }
-
-    .instrutor{
-        font-size: 18pt;
-        font-weight: bold;
-    }
-
-    .header{
-        background-color: white;
-        padding: 25px;
-        margin-bottom: 50px;
-        width: 150%;
-        border-radius: 20px;
-        
-    }
-    .buttonSubscribe{
-        background-color: rgb(0, 161, 99);
-        color: white;
-        width: 400px;
-        height: 40px;
-        text-align: center
-        
-    }
-
-    .buttonAskme{
-        background-color: grey;
-        border-style: none;
-
-    }
-    .styleTitle{
-        background-color:rgb(0, 161, 99);
-        padding: 15px;
-        border-radius: 35px;
-        color: white;
-    }
-</style>
-{% endblock 'style' %}
-
+    <style>
+        body {
+            background-image: url("{% static 'img/back.png' %}");
+        }
+    </style>
+{% endblock %}
 
 {% block 'content' %}
-
-
-{% if course %}
-
-<div class="container my-cont">
-    <div class="row justify-content-between">
+    {% if course %}
+    <div class="container my-cont">
+        <div class="row justify-content-between">
 
         <div class="col">
             <div class="container my-descript">
@@ -91,24 +26,22 @@
                     <div class="container instrutor">
                         <p>Instrutor: Beleleu</p>
                     </div>
-        
+
                     {% if course.imagem_course %}
-                    <div class="col my-col">
-                        <img src="{{ course.imagem_course.url }}" alt="{{ course.name }}">
-                    </div>
-        
+                        <div class="col my-col">
+                            <img src="{{ course.imagem_course.url }}" alt="{{ course.name }}">
+                        </div>
                     {% else %}
-                    <div class="col my-col">
-                        <img src="{% static 'img/learn_fast.png' %}" alt="{{ course.name }}">
-                    </div>
+                        <div class="col my-col">
+                            <img src="{% static 'img/learn_fast.png' %}" alt="{{ course.name }}">
+                        </div>
                     {% endif %}
-        
                 </div>
                 <div class="container info">
-               
+
                     <div class="row my-row">
                         <div class="container">
-                            <p><strong>Irá começar em:</strong>    {{ course.start_date }}</p><br>
+                            <p><strong>Irá começar em:</strong> {{ course.start_date }}</p><br>
                         </div>
                         <div class="container">
                             <p><strong> Foi Atualiazado em:</strong> {{ course.update_at }}</p><br>
@@ -120,17 +53,25 @@
                 </div>
                 <div class="container">
                     <div class="jumbotrom">
-                        {%  if is_valid %}
-                            <span>Formulário enviado com sucesso!</span>
-                        {% endif  %}
+                        
+                        {% if is_valid %}
+                            <span class="alert alert-sucess">E-mail enviado com sucesso!</span>
+                        {% endif %}
+                            
                         <h3>Tire sua dúvida</h3>
-                            {% csrf_token %}
-                            {% crispy forms %}
-                        }
+                        {% csrf_token %}
+                        <form action="" method="post">
+                            {% crispy form %}
+                            
+                           
+                        </form>
+                        
+                         
+                        </form>
                     </div>
                 </div>
             </div>
-            
+
             <div class="container my-col">
                 {% else %}
                 <div class="container">
@@ -140,7 +81,7 @@
             </div>
         </div>
         <div class="col-4">
-    
+
             <div class="header">
                 <div class="row my-row">
                     <h1><strong>{{ course }}</strong></h1>
@@ -150,10 +91,9 @@
                 </div>
                 <div class="row my-row"><a href="" class="btn btn-default buttonSubscribe">Inscrever-se</a></div><br>
                 <h3>Dúvidas?</h3><br>
-                <a href="{% url 'contato' %}" class="btn btn-primary buttonAskme" >Fale Conosco</a>
+                <a href="{% url 'contato' %}" class="btn btn-primary buttonAskme">Fale Conosco</a>
             </div>
         </div>
-        
     </div>
 </div>
 

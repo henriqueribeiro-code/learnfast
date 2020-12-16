@@ -1,0 +1,58 @@
+.my-row {
+    margin: 10px;
+}
+
+.my-col {
+    margin: 5px;
+}
+
+.my-descript {
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+img {
+    width: 500px;
+    height: 300px;
+}
+
+.info {
+    padding: 10px;
+    margin: 10px;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.instrutor {
+    font-size: 18pt;
+    font-weight: bold;
+}
+
+.header {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 50px;
+    width: 150%;
+    border-radius: 20px;
+}
+
+.buttonSubscribe {
+    background-color: rgb(0, 161, 99);
+    color: white;
+    width: 400px;
+    height: 40px;
+    text-align: center
+}
+
+.buttonAskme {
+    background-color: grey;
+    border-style: none;
+}
+
+.styleTitle {
+    background-color: rgb(0, 161, 99);
+    padding: 15px;
+    border-radius: 35px;
+    color: white;
+}

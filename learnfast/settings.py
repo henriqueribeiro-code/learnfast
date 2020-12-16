@@ -116,3 +116,15 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'learnfast', 'media')
 MEDIA_URL = '/media/'
+
+
+##Email
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+DEFAULT_FROM_EMAIL = 'Nome <email@gmail.com>'
+EMAIL_HOST = 'localhost'
+EMAIL_HOST_PASSWORD = ''
+EMAIL_PORT = 25
+DEFAULT_CHARSET = 'UTF-8'
+CONTACT_EMAIL  = 'contato@learnfast.com'
