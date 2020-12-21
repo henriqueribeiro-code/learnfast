@@ -27,9 +27,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
-    'learnfast.core', 
+    'learnfast.core',
     'learnfast.courses',
     'learnfast.accounts',
+    'widget_tweaks',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -115,11 +116,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'learnfast', 'media')
 MEDIA_URL = '/media/'
 
 
-##Email
+# Email
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
@@ -128,4 +131,12 @@ EMAIL_HOST = 'localhost'
 EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 25
 DEFAULT_CHARSET = 'UTF-8'
-CONTACT_EMAIL  = 'contato@learnfast.com'
+CONTACT_EMAIL = 'contato@learnfast.com'
+
+
+
+#Login
+
+LOGIN_URL ='login'
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_URL = 'accounts:logout'

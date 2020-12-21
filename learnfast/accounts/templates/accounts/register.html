@@ -1,0 +1,87 @@
+{% load static %}
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Login | Learn Fast</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    
+
+    <link rel="preload" href="{% static 'css/register.css' %}" as="style" />
+    <link rel="stylesheet" href="{% static 'css/register.css' %}" media="print" onload="this.media='all'" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="inter-container">
+
+            <div class="logo">
+                <img src="{% static 'img/logo.svg' %}" alt="Logo Learn Fast">
+            </div>
+
+            <div class="inter-form">
+
+                <p class="name_login">Cadastro de usuário</p>
+
+                <form action="" method="post" class="forms">
+                    {% csrf_token %}
+
+
+                    {{ form.username }} <br><br>
+                    {{ form.first_name }} <br><br>
+                    {{ form.last_name }} <br><br>
+
+                    {{ form.password1 }}<br><br>
+
+
+                    {{ form.password2 }}<br><br>
+
+
+                    {{ form.email }}<br><br>
+
+
+                    {% if field.help_text %}
+                    <p class="help">{{ field.help_text|safe }}</p>
+                    {% endif %}
+
+                    {% if form.errors %}
+                    {% for field in form %}
+                    {% for error in field.errors %}
+                    <div
+                        style="padding: 10px; background-color: rgb(255, 130, 130); margin-top: 5px; border-radius: 10px;">
+                        <strong>{{ error|escape }}</strong>
+                    </div>
+                    {% endfor %}
+                    {% endfor %}
+                    {% for error in form.non_field_errors %}
+                    <div
+                        style="padding: 10px; background-color: rgb(255, 130, 130); margin-top: 8px; border-radius: 20px;">
+                        <strong>{{ error|escape }}</strong>
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+
+
+
+                    <input type="submit" value="Enviar">
+
+                </form>
+
+
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
