@@ -139,4 +139,4 @@ CONTACT_EMAIL = 'contato@learnfast.com'
 
 LOGIN_URL ='login'
 LOGIN_REDIRECT_URL = 'home'
-LOGOUT_URL = 'accounts:logout'
+LOGOUT_URL = 'home'

@@ -17,6 +17,14 @@
 
 {% block 'content' %}
 <div class="starter-template header">
+    
+    {% if user.is_authenticated %}
+
+    <h2>Olá, {{ user.username }}</h2>
+    
+
+    {% endif %}
+        
     <h1>Sua plataforma mais moderna a distância...</h1>
     <p class="lead">Vem para inovar a forma que você estuda.<br> Nada que você já viu, é igual ao
         <strong>LEARNFAST</strong></p>
