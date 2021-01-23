@@ -20,7 +20,7 @@ urlpatterns = [
     path('courses/', include('learnfast.courses.urls'), name='courses'),
     path('conta/', include('learnfast.accounts.urls'), name='accounts'),
     path('admin/', admin.site.urls),
-] 
+] + static( settings.STATIC_URL,  document_root=settings.STATIC_ROOT )
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

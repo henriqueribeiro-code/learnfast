@@ -1,58 +1,112 @@
-.my-row {
-    margin: 10px;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
 }
 
-.my-col {
-    margin: 5px;
+a, li {
+    text-decoration: none;
+    text-decoration-style: none;
+    
+    
 }
 
-.my-descript {
-    background-color: white;
-    padding: 30px;
+
+header{
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    padding: 30px 10%;
+}
+
+
+.nav_items{
+    list-style: none;
+    margin-left: -90px ;
+
+}
+
+
+
+.nav_items li{
+    display: inline-block;
+    padding: 0px 20px;
+
+}
+
+.nav_items li:hover{
+    border-bottom: 2px solid #93F04D;
+    
+ 
+}
+
+
+.nav_items li a {
+    transition: all 0.3s ease 0s;
+}
+
+
+.nav_element_right a {
+    margin-left: 10px;
+    border: 1px solid #4AA9E0;
+    color: #4AA9E0;
+    padding: 9px;
     border-radius: 20px;
+
 }
 
-img {
-    width: 500px;
-    height: 300px;
-}
 
-.info {
-    padding: 10px;
-    margin: 10px;
-    background-color: white;
+.nav_element_right a:hover {
+    margin-left: 10px;
+    border: 1px solid #4AA9E0;
+    padding: 9px;
     border-radius: 20px;
-}
-
-.instrutor {
-    font-size: 18pt;
+    color: white;
+    background-color: #4AA9E0;
     font-weight: bold;
+
 }
 
-.header {
-    background-color: white;
-    padding: 25px;
-    margin-bottom: 50px;
-    width: 150%;
-    border-radius: 20px;
+.logo{
+    
+  
+    position: absolute;
+   margin-left: 40%;
+
+
+    
 }
 
-.buttonSubscribe {
-    background-color: rgb(0, 161, 99);
-    color: white;
-    width: 400px;
-    height: 40px;
-    text-align: center
+.element_line.left{
+    margin-top: 10px;
+    margin-left: -10px;
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    
 }
 
-.buttonAskme {
-    background-color: grey;
-    border-style: none;
+.element_line.right{
+
+    position: absolute;
+    right: 0;
+    height: 400px;
+   z-index: -2;
+
 }
 
-.styleTitle {
-    background-color: rgb(0, 161, 99);
-    padding: 15px;
-    border-radius: 35px;
-    color: white;
+
+.text-main{
+   position: absolute;
+   z-index: 1;
+   margin-top: 180px;
+   text-align: center;
+   justify-content: center;
+  margin-left:30%;
 }
+
+

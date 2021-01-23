@@ -3,6 +3,7 @@ from django.conf import settings
 from django.contrib.auth import  login, authenticate
 
 
+
 from .forms import RegisterForm
 
 
@@ -20,6 +21,15 @@ def register(request):
     context = {'form': form}
 
     return render(request, template_name, context)
-# Create your views here.
+
+
+
+def areaDoAluno(request):
+    template_name = 'student_area/index.html'
+
+    context = {
+        
+    }
+    return render(request, template_name, context)
 
 
