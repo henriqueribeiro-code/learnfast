@@ -1,6 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
 
 
-<h1>Olá, {{ user.username }}</h1>
+{% block 'style' %}
+  <style>
+      #logo-main img{
+          width: 250px;
+      }
+
+      #welcome-name h2{
+          margin-left: 120px;
+          font-size: 28pt;
+          margin-top: 70px;
+      }
+
+      #welcome-message {
+          display: flex;
+          float: left;
+        
+      }
+
+    
+
+      #welcome-message h1{
+          font-size: 35pt;
+          margin-top: 40px;
+          margin-left: 20px;
+      }
+
+      hr{
+          margin: 70px 50px 0px 50px;
+          color: #A6F869;
+      }
+  </style>
+{% endblock  %}
+
+{% block 'logo' %}
+<div id="logo-main">
+    <img src="{% static 'img/elements/logo.svg' %}" alt="Logo learn Fast">
+</div>
+{% endblock %}
 
 
-<a href="{% url 'home' %}">Voltar</a>
+
+{% block 'content' %}
+
+<div id="welcome-name">
+    <h2>Olá, {{ user.username }} </h2>
+</div>
+
+<div id="welcome-message">
+    <h1>Seja bem vindo!</h1>
+   
+</div>
+
+
+<hr>
+
+
+
+
+
+{% endblock  %}

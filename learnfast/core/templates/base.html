@@ -15,10 +15,12 @@
 
 <body>
   <header>
+    {% block 'logo' %}    
+    {% endblock %}
     <nav>
       <ul class="nav_items">
-        <li><a href="">Início</a></li>
-        <li><a href="">Cursos</a></li>
+        <li><a href="{% url 'home' %}">Início</a></li>
+        <li><a href="localhost:8000/courses/">Cursos</a></li>
         <li><a href="">Sobre nós</a></li>
         <li><a href="">Contato</a></li>
       </ul>
